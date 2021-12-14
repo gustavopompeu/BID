@@ -440,7 +440,7 @@ a <- svm_pred(data_logdiff94[54:310,get(sq[1])], 217)
 svm1_41 <- a[[which.min(a$`RMSE's`)]]
 b <- svm_pred(data_logdiff94[54:310,get(sq[7])], 217)
 svm7_41 <- b[[which.min(b$`RMSE's`)]]
-plot(data_logdiff94$resp[270:310],type="l", xlab="t", ylab="Log-differential exchange rate", main="41 months prediction")
+plot(data_logdiff94$resp[270:310],type="l", xlab="t", ylab="Log-differential exchange rate")
 lines(svm1_41, col=2,lty=2,lwd=2)
 lines(svm7_41, col=3,lty=2,lwd=2)
 lines(rep(0,41), col=4,lty=2,lwd=2)
@@ -449,7 +449,7 @@ legend("topleft", legend=c("Actual values", "SVM1", "SVM7",  "RW"), lty=c(1,2,2,
 ## Random forest
 a <- rf_pred(data_logfull94_respd[54:310,get(sq[4])], 217)
 rf4_41 <- a[[which.min(a$`RMSE's`)]]
-plot(data_logfull94_respd$resp[270:310],type="l", xlab="t", ylab="Log-differential exchange rate", main="41 months prediction")
+plot(data_logfull94_respd$resp[270:310],type="l", xlab="t", ylab="Log-differential exchange rate")
 lines(rf4_41, col=2,lty=2,lwd=2)
 lines(rep(0,41), col=3,lty=2,lwd=2)
 legend("topleft", legend=c("Actual values", "RF4",  "RW"), lty=c(1,2,2), col=1:3, lwd=c(1,2,2))
@@ -457,7 +457,7 @@ legend("topleft", legend=c("Actual values", "RF4",  "RW"), lty=c(1,2,2), col=1:3
 ## Regression splines
 a <- sh_pred(data_logdiff94[54:310,get(sq[7])], 217)
 sp7_41 <- a[[which.min(a$`RMSE's`)]]
-plot(data_logdiff94$resp[270:310],type="l", xlab="t", ylab="Log-differential exchange rate", main="41 months prediction")
+plot(data_logdiff94$resp[270:310],type="l", xlab="t", ylab="Log-differential exchange rate")
 lines(sp7_41, col=2,lty=2,lwd=2)
 lines(rep(0,41), col=3,lty=2,lwd=2)
 legend("topleft", legend=c("Actual values", "SP7",  "RW"), lty=c(1,2,2), col=1:3, lwd=c(1,2,2))
